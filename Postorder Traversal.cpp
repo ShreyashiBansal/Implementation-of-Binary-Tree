@@ -13,7 +13,7 @@ struct Node{
         right = NULL;
     }
 };
-
+ // postorder : left right root
 void postorder(struct Node* root){
     if(root == NULL)
       return;
@@ -22,6 +22,14 @@ void postorder(struct Node* root){
     postorder(root->right);
     cout<<root->data<<" ";
 }
+/*
+       1
+      /  \
+     2    3
+    / \  / \
+   4  5  6  7
+*/
+
 int main() {
     struct Node* root = new Node(1);
     root->left = new Node(2);
@@ -34,3 +42,4 @@ int main() {
     postorder(root);
 	return 0;
 }
+output: 4 5 2 6 7 3 1
