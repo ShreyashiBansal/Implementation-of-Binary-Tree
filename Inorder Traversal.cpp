@@ -13,7 +13,7 @@ struct Node{
         right = NULL;
     }
 };
-
+// inorder : left root right
 void inorder(struct Node* root){
     if(root == NULL)
       return;
@@ -22,6 +22,14 @@ void inorder(struct Node* root){
     cout<<root->data<<" ";
     inorder(root->right);
 }
+/*
+       1
+      /  \
+     2    3
+    / \  / \
+   4  5  6  7
+*/
+
 int main() {
     struct Node* root = new Node(1);
     root->left = new Node(2);
@@ -34,3 +42,5 @@ int main() {
     inorder(root);
 	return 0;
 }
+
+ output: 4 2 5 1 6 3 7
