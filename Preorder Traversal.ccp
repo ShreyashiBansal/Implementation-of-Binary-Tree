@@ -13,7 +13,7 @@ struct Node{
         right = NULL;
     }
 };
-
+// preorder = root left right
 void preorder(struct Node* root){
     if(root == NULL)
       return;
@@ -22,6 +22,14 @@ void preorder(struct Node* root){
     preorder(root->left);
     preorder(root->right);
 }
+      /*
+       1
+      /  \
+     2    3
+    / \  / \
+   4  5  6  7
+*/
+
 int main() {
     struct Node* root = new Node(1);
     root->left = new Node(2);
@@ -34,3 +42,5 @@ int main() {
     preorder(root);
 	return 0;
 }
+ 
+ output: 1 2 4 5 3 6 7
